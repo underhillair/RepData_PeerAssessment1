@@ -67,7 +67,7 @@ ggtitle("Distribution of daily step totals between 10/1/2012 and 11/30/2012")
 ## Warning: Removed 8 rows containing non-finite values (stat_bin).
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-3-1.png)<!-- -->
+![](/unnamed-chunk-3-1.png)<!-- -->
 
 Mean and median steps are calculated with results displayed
 
@@ -101,7 +101,7 @@ ggplot(Time_table, aes(Interval, Steps)) +
   scale_x_continuous(name = "Time of Day", limits=c(0,2355), breaks=c(0,600,1200,1800,2400))
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-5-1.png)<!-- -->
+![](/unnamed-chunk-5-1.png)<!-- -->
 
 The 5 minutes interval with the maximum average steps is calculated
 
@@ -163,7 +163,7 @@ qplot(Steps, data=Daily_table2) +
 ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-9-1.png)<!-- -->
+![](/unnamed-chunk-9-1.png)<!-- -->
 
 The revised mean and median is also calculated
 
@@ -198,4 +198,4 @@ ggplot(Time_table2, aes(Interval, Steps)) +
   scale_x_continuous(name = "Time of Day", limits=c(0,2355), breaks=c(0,600,1200,1800,2400))
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-11-1.png)<!-- -->
+![](/unnamed-chunk-11-1.png)<!-- -->

@@ -28,7 +28,7 @@ Data1$Time <- as.POSIXct(sprintf("%04d",
 
 Using processed data, a summary table is made which is then used to produce a histogram showing the total number of steps taken by date during the two month period.
 
-```{r}
+```{r,fig.path="/"}
 Daily_table <- Data1 %>% group_by(Date) %>% summarise(sum(Steps))
 names(Daily_table) <- c("Date", "Steps")
 
@@ -46,7 +46,7 @@ median(Daily_table$Steps, na.rm = TRUE)
 
 Another summary table was produced to give the average number of steps over each five minute period throughout the day.  Another histogram is produced to show the result.
 
-```{r}
+```{r,fig.path="/"}
 Time_table <- Data1 %>% group_by(Interval) %>% summarise(mean(Steps, na.rm=TRUE))
 names(Time_table) <- c("Interval", "Steps")
 
@@ -75,7 +75,7 @@ In order to implement this algorithm, the median values by interval are created 
 
 Further production is done to calculate the Weekday/Weekend indicator.
 
-```{r}
+```{r,fig.path="/"}
 Time_table_median <- Data1 %>% group_by(Interval) %>% summarise(median(Steps, na.rm=TRUE))
 names(Time_table_median) <- c("Interval", "Steps_Median")
 
@@ -87,7 +87,7 @@ Data2$Weekend <- ifelse(Data2$Day_of_week %in% c("Sunday","Saturday"), "Weekend"
 
 Similar to above, the average number of steps per day is calculated, this time off the data using median counts instead of NA.  Results are shown in the histogram.
 
-```{r}
+```{r,fig.path="/"}
 Daily_table2 <- Data2 %>% group_by(Date) %>% summarise(sum(Steps_Final))
 names(Daily_table2) <- c("Date", "Steps")
 
@@ -105,7 +105,7 @@ median(Daily_table2$Steps, na.rm = TRUE)
 
 Finally a two level facet grid is produced showing the average steps over each five minute interval split by weekdays vs. weekends.  
 
-```{r}
+```{r,fig.path="/"}
 Time_table2 <- Data2 %>% group_by(Interval,Weekend) %>% summarise(mean(Steps, na.rm=TRUE))
 names(Time_table2) <- c("Interval", "Weekend", "Steps")
 
